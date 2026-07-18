@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+  }
+  ::selection {
+    background-color: #B5651D;
+    color: #F7F6F1;
+  }
+  :focus-visible {
+    outline: 2px solid #B5651D;
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-[0.22em] uppercase;
+  }
+
+  /* Corner registration marks — the signature motif, echoing blueprint
+     sheet frames / PCB fiducial marks. Applied to section frames. */
+  .reg-mark {
+    @apply absolute w-4 h-4 pointer-events-none hidden sm:block;
+  }
+  .reg-mark--tl { @apply top-0 left-0 border-t-2 border-l-2; }
+  .reg-mark--tr { @apply top-0 right-0 border-t-2 border-r-2; }
+  .reg-mark--bl { @apply bottom-0 left-0 border-b-2 border-l-2; }
+  .reg-mark--br { @apply bottom-0 right-0 border-b-2 border-r-2; }
+
+  .trace-line {
+    stroke-dasharray: 4 4;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
