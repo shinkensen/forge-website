@@ -48,39 +48,27 @@ export default function Budget() {
     const controller = new AbortController();
 
   const fetchDonations = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(
-        "https://bank.hackclub.com/api/v3/organizations/stevenson-highschool-forge-club",
-        { signal: controller.signal }
-      );
-      /*
-      const response = await fetch(
-          "https://corsproxy.io/?" + encodeURIComponent("https://bank.hackclub.com/api/v3/organizations/stevenson-highschool-forge-club")
-      ) ;
-       */
-      if (!response.ok) {
-        throw new Error("Failed to fetch donation data");
-      }
-
-      const data = await response.json();
-      
-      // Accessing balances.total_raised correctly
-      const raisedCents = data.balances?.total_raised ?? 0;
-      setTotalDonations(raisedCents / 100);
-    } catch (err:any) {
-      // Ignore errors caused by component unmounting
-      if (err.name !== "AbortError") {
-        console.error("Error fetching donations:", err);
-        setError("Unable to load donation data");
-      }
-    } finally {
-      // Guarantees loading state updates regardless of success or error
-      if (!controller.signal.aborted) {
-        setLoading(false);
-      }
+  try {
+    // Call your internal server endpoint instead of the HCB URL directly
+    const response = await fetch('/api/donations');
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch donation data');
     }
-  };
+
+    const data = await response.json();
+    
+    // Remember to extract total_raised from balances
+    const raised = data.balances?.total_raised ? data.balances.total_raised / 100 : 0;
+    
+    setTotalDonations(raised);
+    setLoading(false);
+  } catch (err) {
+    console.error('Error fetching donations:', err);
+    setError('Unable to load donation data');
+    setLoading(false);
+  }
+};
 
   fetchDonations();
 
