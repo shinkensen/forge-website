@@ -50,14 +50,15 @@ export default function Budget() {
   const fetchDonations = async () => {
     try {
       setLoading(true);
-      /*const response = await fetch(
+      const response = await fetch(
         "https://bank.hackclub.com/api/v3/organizations/stevenson-highschool-forge-club",
         { signal: controller.signal }
       );
-      */
+      /*
       const response = await fetch(
           "https://corsproxy.io/?" + encodeURIComponent("https://bank.hackclub.com/api/v3/organizations/stevenson-highschool-forge-club")
       ) ;
+       */
       if (!response.ok) {
         throw new Error("Failed to fetch donation data");
       }
@@ -67,7 +68,7 @@ export default function Budget() {
       // Accessing balances.total_raised correctly
       const raisedCents = data.balances?.total_raised ?? 0;
       setTotalDonations(raisedCents / 100);
-    } catch (err) {
+    } catch (err:any) {
       // Ignore errors caused by component unmounting
       if (err.name !== "AbortError") {
         console.error("Error fetching donations:", err);
