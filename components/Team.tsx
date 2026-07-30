@@ -4,33 +4,32 @@ const LEADERS = [
   {
     initial: "G",
     name: "Govind Nair",
-    role: "Co-President",
-    tags: ["Electronics", "Coding", "PCB Design"],
-    bio: "Expert in electronics and programming, specializing in PCB design and embedded systems.",
-  },
-  {
-    initial: "A",
-    name: "Abhinav Gandhi",
-    role: "Co-President",
-    tags: ["Engineering", "BioTech"],
-    bio: "Passionate about engineering innovation and biotechnology applications.",
-  },
-];
-
-const DIRECTORS = [
-  {
-    initial: "S",
-    name: "Siddharth Nittur",
-    role: "Director of Programming",
-    tags: ["Hardware Programming", "Embedded Systems"],
-    bio: "Focused on hardware programming and microcontroller development.",
+    role: "Founder",
+    tags: ["Operations", "Founding Staff"],
+    bio: "Founded Forge in April 2025, built forge from the ground up",
   },
   {
     initial: "G",
     name: "Greg Volkov",
-    role: "Director of Electrical Engineering",
-    tags: ["Breadboards", "Circuitry"],
-    bio: "Background in breadboarding and circuit design fundamentals.",
+    role: "Technical and Operations Lead",
+    tags: ["Operations", "Founding Staff"],
+    bio: "Serves as a technical and operational lead, overseeing all forge programs",
+  },
+];
+const DIRECTORS = [
+  {
+    initial: "S",
+    name: "Bryce Goldstine",
+    role: "Design and Production Team Lead",
+    tags: ["MakerKits", "Founding Staff"],
+    bio: "Focused on leading a team of engineers to develop MakerKits for youth",
+  },
+  {
+    initial: "L",
+    name: "Lucas Lyubenko",
+    role: "Distribution Team Lead",
+    tags: ["MakerKits", "Founding Staff"],
+    bio: "Manages the Distribution and Assembly of MakerKits",
   },
 ];
 

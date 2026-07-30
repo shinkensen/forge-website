@@ -26,7 +26,7 @@ export default function Sponsor() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="https://hcb.hackclub.com/stevenson-highschool-forge-club"
+              href="https://hcb.hackclub.com/donations/start/stevenson-highschool-forge-club"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3.5 bg-copper text-paper font-mono text-[13px] uppercase tracking-wide hover:bg-copper-light transition-colors"
