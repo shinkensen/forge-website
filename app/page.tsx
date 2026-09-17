@@ -13,10 +13,6 @@ export default async function Home(
 {searchParams}: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  
-    if ((await searchParams).donate){
-      redirect("https://forms.gle/jTACFeQQj9cY3ia68");
-    }
 
   return (
     <main>
