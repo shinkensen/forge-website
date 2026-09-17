@@ -8,8 +8,16 @@ import Team from "@/components/Team";
 import Join from "@/components/Join";
 import Sponsor from "@/components/Sponsor";
 import Footer from "@/components/Footer";
+import { redirect } from "next/navigation";
+export default async function Home(
+{searchParams}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  
+    if ((await searchParams).donate){
+      redirect("https://forms.gle/jTACFeQQj9cY3ia68");
+    }
 
-export default function Home() {
   return (
     <main>
       <Nav />
